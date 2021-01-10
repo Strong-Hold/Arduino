@@ -17,7 +17,7 @@
 - Echo: Эхо (OUTPUT)
 - GND: Земля
 
-'''java
+```C++
 // код на C++
 int echo = 9; // echo Pin
 int trig = 8; // trig Pin
@@ -40,5 +40,5 @@ void loop() {
   Serial.println("cm"); 
   delay(100);
 }
-'''
+```
 
