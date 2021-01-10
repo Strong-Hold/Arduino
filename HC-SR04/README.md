@@ -1,7 +1,5 @@
 # HC-SR04
- это прошивщик, которая позволяет запрограммировать ESP8266 модуль.
- 
- ![Wiring](Resources/Images/HC-SR04.png)
+ ![HC-SR04](Resources/Images/HC-SR04.png)
  
 Технические характеристики HC-SR04
 
@@ -19,7 +17,9 @@
 - Echo: Эхо (OUTPUT)
 - GND: Земля
 
-'''C++
+![HC-SR04](Resources/Images/HC.jpg)
+
+```C++
 // код на C++
 int echo = 9; // echo Pin
 int trig = 8; // trig Pin
@@ -42,6 +42,5 @@ void loop() {
   Serial.println("cm"); 
   delay(100);
 }
-
-'''
+```
 
