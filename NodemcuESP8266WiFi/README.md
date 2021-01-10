@@ -1,7 +1,7 @@
 # Nodemcu firmware programmer 
  это прошивщик, которая позволяет запрограммировать ESP8266 модуль.
  
- ![Wiring](Resources/imgpreview.jpg)
+ ![Wiring](imgpreview.jpg)
  
 https://github.com/SpacehuhnTech/esp8266_deauther/releases
 
