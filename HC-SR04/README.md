@@ -19,7 +19,7 @@
 - Echo: Эхо (OUTPUT)
 - GND: Земля
 
-'''
+'''cpp
 // код на C++
 int echo = 9; // echo Pin
 int trig = 8; // trig Pin
