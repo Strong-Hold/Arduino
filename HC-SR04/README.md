@@ -1,5 +1,5 @@
 # HC-SR04
- ![Wiring](Resources/Images/HC-SR04.png)
+ ![HC-SR04](Resources/Images/HC-SR04.png)
  
 Технические характеристики HC-SR04
 
@@ -16,6 +16,8 @@
 - Trig : Триггер (INPUT)
 - Echo: Эхо (OUTPUT)
 - GND: Земля
+
+![HC-SR04](Resources/Images/HC.jpg)
 
 ```C++
 // код на C++
