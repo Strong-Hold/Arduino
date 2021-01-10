@@ -1,46 +1,49 @@
 # HC-SR04
- ![HC-SR04](Resources/Images/HC-SR04.png)
+ ![HC-SR04](Resources/Images/MQ-5.jpg)
  
-Технические характеристики HC-SR04
+Технические характеристики MQ-5
 
-- Напряжение питания: +5В;
-- Эффективный рабочий угол:< 15°;
-- Расстояние измерений: от 2 см до 400 см;
-- Разрешающая способность: 0.3 см;
-- Угол измерений: 30 градусов;
-- Ширина импульса триггера: 10 микросекунд;
-- Размеры: 45 мм x 20 мм x 15 мм.
+-Входное напряжение питания: 5 В;
+-Потребляемый ток: до 150 мА;
+-Диапазон измерений:
+ -a.	Пропан: 200–10000 ppm;
+ -b.	Изобутан: 200–10000 ppm;
+ -c.	Природный газ: 200–10000 ppm;
+-Рабочая температура: 0 ... +50 °C;
 
 Пины:
-- VCC: +5 вольт (постоянный ток)
-- Trig : Триггер (INPUT)
-- Echo: Эхо (OUTPUT)
-- GND: Земля
+-VCC обеспечивает питание для модуля. Вы можете подключить его к выходу 5 В вашей платы Arduino.
+-GND – вывод земли, должен быть подключен к выводу GND на Arduino.
+-D0 обеспечивает цифровое представление о наличии горючих газов.
+-A0 обеспечивает аналоговое выходное напряжение, пропорциональное концентрации дыма/газа.
 
-![HC-SR04](Resources/Images/HC.jpg)
+
+![HC-SR04](Resources/Images/IMG.jpg)
 
 ```C++
-// код на C++
-int echo = 9; // echo Pin
-int trig = 8; // trig Pin
-void setup() { 
-  Serial.begin (9600); 
-  pinMode(trig, OUTPUT); 
-  pinMode(echo, INPUT); 
-} 
- 
-void loop() { 
-  int duration, cm; 
-  digitalWrite(trig, LOW); 
-  delayMicroseconds(2); 
-  digitalWrite(trig, HIGH); 
-  delayMicroseconds(10); 
-  digitalWrite(trig, LOW); 
-  duration = pulseIn(echo, HIGH); 
-  cm = duration / 58; // определение расстояния в см
-  Serial.print(cm); 
-  Serial.println("cm"); 
-  delay(100);
+#define MQ2pin (0)
+float sensorValue;  // переменная для хранения значения датчика
+void setup()
+{
+  Serial.begin(9600); // настроить последовательный порт на скорость 9600
+  Serial.println("Gas sensor warming up!");
+  delay(20000);       // дать MQ-2 время для прогрева
 }
+void loop()
+{
+  sensorValue = analogRead(MQ2pin); // прочитать аналоговый вход 0
+  
+  Serial.print("Sensor Value: ");
+  Serial.print(sensorValue);
+  
+  if(sensorValue > 300)
+  {
+    Serial.print(" | Smoke detected!");
+  }
+  
+  Serial.println("");
+  delay(2000); // подождать 2 сек до следующего чтения
+}
+
 ```
 
