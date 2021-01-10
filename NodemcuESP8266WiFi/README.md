@@ -6,3 +6,6 @@
 https://github.com/SpacehuhnTech/esp8266_deauther/releases
 
 https://github.com/spacehuhn/esp8266_beaconSpam
+
+https://github.com/nodemcu/nodemcu-flasher
+
