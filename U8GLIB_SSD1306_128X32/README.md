@@ -1,5 +1,5 @@
 # SSD1306
- ![SSD1306](Resources/Images/IMG.JPG)
+ ![SSD1306](Resources/Images/IMG.jpg)
  
 Технические характеристики HC-SR04
 
