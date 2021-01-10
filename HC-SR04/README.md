@@ -19,4 +19,29 @@
 - Echo: Эхо (OUTPUT)
 - GND: Земля
 
+'''C++
+// код на C++
+int echo = 9; // echo Pin
+int trig = 8; // trig Pin
+void setup() { 
+  Serial.begin (9600); 
+  pinMode(trig, OUTPUT); 
+  pinMode(echo, INPUT); 
+} 
+ 
+void loop() { 
+  int duration, cm; 
+  digitalWrite(trig, LOW); 
+  delayMicroseconds(2); 
+  digitalWrite(trig, HIGH); 
+  delayMicroseconds(10); 
+  digitalWrite(trig, LOW); 
+  duration = pulseIn(echo, HIGH); 
+  cm = duration / 58; // определение расстояния в см
+  Serial.print(cm); 
+  Serial.println("cm"); 
+  delay(100);
+}
+
+'''
 
