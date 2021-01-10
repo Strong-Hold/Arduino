@@ -1,7 +1,7 @@
 # HC-SR04
  это прошивщик, которая позволяет запрограммировать ESP8266 модуль.
  
- ![Wiring](Resources/Images/HC-SR04.jpg)
+ ![Wiring](Resources/Images/HC-SR04.png)
  
 Технические характеристики HC-SR04
 
